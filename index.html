@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Test</title>
+    <script>
+        function search() {
+            var input, filter, ul, li, a, i, tvalue;
+            input = document.getElementById('searchbox');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("posts");
+            li = ul.getElementsByTagName('li');
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                tvalue = a.textContent || a.innerText;
+                if (tvalue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="https://hackscratch.github.io/">title\</a>
+    <input type="text" id="searchbox" onkeyup="search()" placeholder="search posts" size="10">
+    <hr>
+    <ul id="posts" style="list-style-type:none;margin:0;padding:0;">
+<li><a href="/posts/Another Test %23ok.html">Another Test #ok</a></li>
+<li><a href="/posts/About %23about [].html">About #about []</a></li>
+<li><a href="/posts/testing %23test.html">testing #test</a></li>
+<li><a href="/posts/[Download All User Gists] Download All User Gists to Local Directory in C%23 %23gists.html">[Download All User Gists] Download All User Gists to Local Directory in C# #gists</a></li>
+<li><a href="/posts/[Connect to Autodesk Inventor - Silent Operation] %23inventor.html">[Connect to Autodesk Inventor - Silent Operation] #inventor</a></li>
+</ul>
+</body>
+</html>
