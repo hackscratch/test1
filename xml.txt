@@ -1,0 +1,31 @@
+<WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="{Binding ActualHeight,ElementName=titlebar}"/>
+    </WindowChrome.WindowChrome>
+    <DockPanel Margin="0">
+        <Border Background="SlateGray" DockPanel.Dock="Top" Height="25" x:Name="titlebar">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="25" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Image.OpacityMask>
+                        <ImageBrush/>
+                    </Image.OpacityMask>
+                </Image>
+                <TextBlock Text="{Binding Title, FallbackValue=Title, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            </StackPanel>
+        </Border>
+        <Border DockPanel.Dock="Top" Height="100" Background="#FF2E2E2E">
+            <TextBlock Text="Window content" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+        </Border>
+        <Border BorderBrush="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="61*"/>
+                    <RowDefinition Height="415*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Window content" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="Window content" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"/>
+
+            </Grid>
+
+        </Border>
+
+    </DockPanel>
